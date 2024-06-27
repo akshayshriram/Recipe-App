@@ -23,12 +23,11 @@ const Search = ({ foodData, setFoodData }) => {
     <div>
       <input
         type="text"
+        className="form-control bg-gradient bg-warning"
+        placeholder="Search Recipe Here..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button type="submit" onSubmit={(e) => handleSubmit(e)}>
-        Search
-      </button>
     </div>
   );
 };

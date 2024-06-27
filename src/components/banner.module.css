@@ -1,0 +1,14 @@
+.banner {
+  background-image: url("../assets/bg_image.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    background-image: url("../assets/bg_image_mobile.png");
+  }
+  display: flex;
+  align-items: center;
+}
