@@ -1,10 +1,31 @@
 import React from "react";
+import styles from "./food.module.css";
+import FoodModal from "./FoodModal";
 
-const FoodItem = ({ food }) => {
+const FoodItem = ({ food, setSelectedFood }) => {
   return (
     <>
-      <img src={food.image} alt={food.title} />
-      <p>{food.title}</p>
+      <div className="col-12 col-md-4">
+        <div className={styles.foodCard}>
+          <h4>{food.title}</h4>
+          <button
+            type="button"
+            className="btn btn-primary"
+            // data-bs-toggle="modal"
+            // data-bs-target={`#${food.id}`}
+            onClick={() => {
+              console.log("clicked");
+              setSelectedFood(food.id);
+            }}
+          >
+            View More
+          </button>
+          <div className={styles.foodImage}>
+            <img src={food.image} alt={food.title} />
+          </div>
+          {/* <FoodModal food={food} key={`modal_${food.id}`} /> */}
+        </div>
+      </div>
     </>
   );
 };
