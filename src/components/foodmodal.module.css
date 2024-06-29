@@ -1,0 +1,9 @@
+.foodModalCard {
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+}

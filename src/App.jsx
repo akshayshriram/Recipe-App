@@ -11,13 +11,6 @@ function App() {
   const [foodData, setFoodData] = useState([]);
   const [selectedFood, setSelectedFood] = useState();
 
-  const handleShowModal = (food) => {
-    setSelectedFood(food);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedFood(null);
-  };
   return (
     <>
       <div className="">
@@ -26,7 +19,7 @@ function App() {
         <FoodList
           foodData={foodData}
           setSelectedFood={setSelectedFood}
-          onShowModal={handleShowModal}
+          // onShowModal={handleShowModal}
         />
         <h1>{selectedFood}</h1>
         {selectedFood && (

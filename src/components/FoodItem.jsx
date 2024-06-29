@@ -14,8 +14,7 @@ const FoodItem = ({ food, setSelectedFood }) => {
             // data-bs-toggle="modal"
             // data-bs-target={`#${food.id}`}
             onClick={() => {
-              console.log("clicked");
-              setSelectedFood(food.id);
+              setSelectedFood(String(food.id));
             }}
           >
             View More

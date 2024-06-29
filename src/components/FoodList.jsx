@@ -6,15 +6,16 @@ const FoodList = ({ foodData, setSelectedFood }) => {
     <section className="FoodList">
       <div className="container">
         <div className="row">
-          {foodData.map((food) => (
-            // {console.log(item)}
+          {foodData &&
+            foodData.map((food) => (
+              // {console.log(item)}
 
-            <FoodItem
-              food={food}
-              setSelectedFood={setSelectedFood}
-              key={food.id}
-            />
-          ))}
+              <FoodItem
+                food={food}
+                setSelectedFood={setSelectedFood}
+                key={food.id}
+              />
+            ))}
         </div>
       </div>
     </section>
