@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Search from "./components/Search";
 import FoodList from "./components/FoodList";
 import Nav from "./components/Nav";
@@ -10,18 +10,26 @@ import FoodModal from "./components/FoodModal";
 function App() {
   const [foodData, setFoodData] = useState([]);
   const [selectedFood, setSelectedFood] = useState();
+  const [error, setError] = useState("");
+  const [searchInitiated, setSearchInitiated] = useState(false);
 
   return (
     <>
       <div className="">
         <Nav />
-        <Banner foodData={foodData} setFoodData={setFoodData} />
+        <Banner
+          foodData={foodData}
+          setFoodData={setFoodData}
+          setError={setError}
+          setSearchInitiated={setSearchInitiated}
+        />
         <FoodList
           foodData={foodData}
           setSelectedFood={setSelectedFood}
+          error={error}
+          searchInitiated={searchInitiated}
           // onShowModal={handleShowModal}
         />
-        <h1>{selectedFood}</h1>
         {selectedFood && (
           <FoodModal
             selectedFood={selectedFood}

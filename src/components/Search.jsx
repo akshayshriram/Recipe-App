@@ -1,22 +1,40 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-const Search = ({ foodData, setFoodData }) => {
-  const [query, setQuery] = useState("pizza");
+const Search = ({ foodData, setFoodData, setError, setSearchInitiated }) => {
+  const [query, setQuery] = useState("");
+  const [fetchData, setFetchData] = useState(false);
+
   useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(
-        `${BASE_URL}/recipes/complexSearch?query=${query}&apiKey=${
-          import.meta.env.VITE_API_KEY
-        }`
-      );
-      const data = await res.json();
-      //   console.log(data.results);
-      setFoodData(data.results);
+    if (fetchData) {
+      async function getData() {
+        try {
+          const res = await axios.get(`${BASE_URL}/recipes/complexSearch`, {
+            params: {
+              query: query,
+              apiKey: import.meta.env.VITE_API_KEY,
+            },
+          });
+
+          setFoodData(res.data.results);
+          setError("");
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          setError("Daily limit API Exhausted...");
+        }
+      }
+      getData();
+      setFetchData(false);
+      setSearchInitiated(true);
     }
-    fetchData();
-  }, [query]);
+  }, [fetchData]);
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+    setFetchData(true);
+  };
 
   return (
     <div>
@@ -25,7 +43,7 @@ const Search = ({ foodData, setFoodData }) => {
         className="form-control bg-gradient bg-warning"
         placeholder="Search Recipe Here..."
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={handleInputChange}
       />
     </div>
   );

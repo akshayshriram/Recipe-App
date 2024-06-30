@@ -7,3 +7,10 @@
   display: flex;
   gap: 20px;
 }
+.foodModalCard img {
+  height: 50px;
+  width: auto;
+}
+.foodContainer {
+  max-width: 900px !important;
+}

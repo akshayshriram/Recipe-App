@@ -2,7 +2,7 @@ import React from "react";
 import Search from "./Search";
 import styles from "./banner.module.css";
 
-const Banner = ({ foodData, setFoodData }) => {
+const Banner = ({ foodData, setFoodData, setError, setSearchInitiated }) => {
   return (
     <>
       <section className={styles.banner}>
@@ -16,7 +16,12 @@ const Banner = ({ foodData, setFoodData }) => {
                 clear instructions and stunning visuals. Unlock culinary
                 excellence today!"
               </p>
-              <Search foodData={foodData} setFoodData={setFoodData} />
+              <Search
+                foodData={foodData}
+                setFoodData={setFoodData}
+                setError={setError}
+                setSearchInitiated={setSearchInitiated}
+              />
             </div>
           </div>
         </div>
