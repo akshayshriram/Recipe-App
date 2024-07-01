@@ -41,7 +41,7 @@ const Search = ({ foodData, setFoodData, setError, setSearchInitiated }) => {
       <input
         type="text"
         className="form-control bg-gradient bg-warning"
-        placeholder="Search Recipe Here..."
+        placeholder="Search Recipe Here... Paneer"
         value={query}
         onChange={handleInputChange}
       />

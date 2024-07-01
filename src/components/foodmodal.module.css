@@ -14,3 +14,13 @@
 .foodContainer {
   max-width: 900px !important;
 }
+
+.foodModalCloseButton {
+  top: 50px !important;
+  left: 87%;
+  padding: 10px !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  color: black !important;
+}

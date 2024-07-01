@@ -20,7 +20,7 @@ const FoodList = ({ foodData, setSelectedFood, error, searchInitiated }) => {
             searchInitiated && (
               <h2>
                 No food item found. Please search for another food. Example:
-                Pizza
+                Paneer
               </h2>
             )
           )}

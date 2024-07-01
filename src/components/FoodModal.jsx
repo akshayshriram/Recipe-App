@@ -45,19 +45,19 @@ const FoodModal = ({ selectedFood, setSelectedFood }) => {
         background: "rgba(0, 0, 0,0.28)",
       }}
     >
+      <button
+        type="button"
+        className={`btn-close sticky-top ${styles.foodModalCloseButton}`}
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        onClick={handleClose}
+      ></button>
       <div className={`modal-dialog ${styles.foodContainer}`}>
         <div className="modal-content container">
           <div className="modal-header">
             <h4 className="modal-title" id="foodModalLabel">
               {selectedFoodData?.title || "Loading..."}
             </h4>
-            <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              onClick={handleClose}
-            ></button>
           </div>
           <div className="modal-body row">
             {selectedFoodData ? (
